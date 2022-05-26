@@ -3,8 +3,15 @@ package com.example.addressbook.model;
 import com.example.addressbook.dto.ContactDTO;
 import lombok.Data;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "addressbook_DB")
 @Data
 public class Contact {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "Contact_Id")
     private int contactId;
     private String firstName;
     private String lastName;

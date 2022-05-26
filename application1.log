@@ -91,3 +91,9 @@
 2022-05-26 19:17:37.122  INFO 9616 --- [restartedMain] c.e.addressbook.AddressBookApplication   : Started AddressBookApplication in 1.347 seconds (JVM running for 1.999)
 2022-05-26 19:17:37.125  INFO 9616 --- [restartedMain] c.e.addressbook.AddressBookApplication   : AddressBook App Started in DEV Environment
 2022-05-26 19:17:37.126  INFO 9616 --- [restartedMain] c.e.addressbook.AddressBookApplication   : AddressBook App DB User is root
+2022-05-26 19:36:21.279  INFO 13580 --- [restartedMain] c.e.addressbook.AddressBookApplication   : Starting AddressBookApplication using Java 18.0.1.1 on Vishaka with PID 13580 (D:\SpringBoot\AddressBook\target\classes started by root in D:\SpringBoot\AddressBook)
+2022-05-26 19:36:21.280 DEBUG 13580 --- [restartedMain] c.e.addressbook.AddressBookApplication   : Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-05-26 19:36:21.281  INFO 13580 --- [restartedMain] c.e.addressbook.AddressBookApplication   : The following 1 profile is active: "dev"
+2022-05-26 19:36:22.115  INFO 13580 --- [restartedMain] c.e.addressbook.AddressBookApplication   : Started AddressBookApplication in 1.082 seconds (JVM running for 1.59)
+2022-05-26 19:36:22.117  INFO 13580 --- [restartedMain] c.e.addressbook.AddressBookApplication   : AddressBook App Started in DEV Environment
+2022-05-26 19:36:22.118  INFO 13580 --- [restartedMain] c.e.addressbook.AddressBookApplication   : AddressBook App DB User is root
