@@ -13,7 +13,9 @@ public class Contact {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Contact_Id")
     private int contactId;
+    @Column(name = "FirstName")
     private String firstName;
+    @Column(name = "LastName")
     private String lastName;
     private String address;
     private String state;
@@ -22,9 +24,8 @@ public class Contact {
     private String phone;
     private String email;
 
-    public Contact(int contactId, ContactDTO contactDTO) {
+    public Contact( ContactDTO contactDTO) {
         super();
-        this.contactId = contactId;
         this.updateContact(contactDTO);
     }
 

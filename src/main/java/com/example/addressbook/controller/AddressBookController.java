@@ -24,14 +24,14 @@ public class AddressBookController {
     public ResponseEntity<ResponseDTO> getContactData() {
 
         List<Contact> contactData = addressbookservice.getContact();
-        System.out.println(contactData.toString());
+        log.debug("Address Book DTO: " +contactData.toString());
         ResponseDTO response = new ResponseDTO("Get call success", contactData);
         return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK);
     }
 
 
     @GetMapping("/get/{contactId}")
-    public ResponseEntity<ResponseDTO> getContactDataById(@PathVariable("contactId") int contactId) {
+    public ResponseEntity<ResponseDTO> getContactData(@PathVariable("contactId") int contactId) {
         Contact contactData = addressbookservice.getContactById(contactId);
         ResponseDTO response = new ResponseDTO("Get call success for id", contactData);
         return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK);
@@ -41,7 +41,7 @@ public class AddressBookController {
     @PostMapping("/create")
     public ResponseEntity<ResponseDTO> createContactData(@Valid @RequestBody ContactDTO contactDTO) {
         Contact contactData = addressbookservice.createContact(contactDTO);
-        System.out.println(contactData.toString());
+        log.debug("Address Book DTO: " +contactData.toString());
         ResponseDTO response = new ResponseDTO("Created contact data for", contactData);
         return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK);
 
@@ -51,6 +51,8 @@ public class AddressBookController {
     public ResponseEntity<ResponseDTO> updateContactData(@PathVariable("contactId") int contactId,
                                                          @Valid @RequestBody ContactDTO contactDTO) {
         Contact contactData = addressbookservice.updateContact(contactId, contactDTO);
+        log.debug("AddressBook Contact After Update " + contactData.toString());
+
         ResponseDTO response = new ResponseDTO("Updated contact data for", contactData);
         return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK);
 
@@ -62,6 +64,10 @@ public class AddressBookController {
 
         ResponseDTO response = new ResponseDTO("Delete call success for id ", "deleted id:" + contactId);
         return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK);
-
     }
+
+
+
+
+
 }
