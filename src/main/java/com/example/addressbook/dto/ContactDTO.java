@@ -1,10 +1,11 @@
 package com.example.addressbook.dto;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
-
+@ToString
 public @Data class ContactDTO {
     @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Firstname Invalid ")
     @NotEmpty(message = "first name cannot be null")
@@ -49,11 +50,4 @@ public @Data class ContactDTO {
         this.phone = phone;
         this.email= email;
     }
-
-    @Override
-    public String toString() {
-        return "ContactDTO [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", state="
-                + state + ", city=" + city + ", zip=" + zip + ", phone=" + phone +   ",email=" + email +"]";
-    }
-
 }

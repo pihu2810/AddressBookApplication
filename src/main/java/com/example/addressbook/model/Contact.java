@@ -15,10 +15,14 @@ public class Contact {
     private String phone;
     private String email;
 
-
-
     public Contact(int contactId, ContactDTO contactDTO) {
         super();
+        this.contactId = contactId;
+        this.updateContact(contactDTO);
+    }
+
+    public void  updateContact( ContactDTO contactDTO) {
+
         this.contactId = contactId;
         this.firstName = contactDTO.firstName;
         this.lastName = contactDTO.lastName;
