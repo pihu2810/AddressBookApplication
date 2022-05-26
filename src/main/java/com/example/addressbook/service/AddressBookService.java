@@ -26,22 +26,21 @@ public class AddressBookService implements IAddressBookService {
 
     @Override
     public Contact createContact(ContactDTO contactDTO) {
-        List<Contact> contactData = this.getContact();
-        contactList.add( new Contact(contactData.size() + 1, contactDTO));
-        return contactList.get(contactList.size() - 1);
+        Contact contactData = new Contact(contactList.size()+1, contactDTO);
+        contactList.add(contactData);
+        return contactData;
     }
 
     @Override
     public Contact updateContact(int contactId, ContactDTO contactDTO) {
         Contact contact = this.getContactById(contactId);
-        contact.setFirstName(contactDTO.getFirstName());
-        contact.setLastName(contactDTO.getLastName());
-        contact.setAddress(contactDTO.getAddress());
-        contact.setState(contactDTO.getState());
-        contact.setCity(contactDTO.getCity());
-        contact.setZip(contactDTO.getZip());
-        contact.setPhone(contactDTO.getPhone());
-        contact.setEmail(contactDTO.getEmail());
+        contact.setFirstName(contactDTO.firstName);
+        contact.setLastName(contactDTO.lastName);
+        contact.setAddress(contactDTO.address);
+        contact.setState(contactDTO.state);
+        contact.setCity(contactDTO.city);
+        contact.setZip(contactDTO.zip);
+        contact.setPhone(contactDTO.phone);
         contactList.set(contactId - 1, contact);
         return contact;
     }
