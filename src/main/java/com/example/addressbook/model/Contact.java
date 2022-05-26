@@ -42,5 +42,5 @@ public class Contact {
         this.phone = contactDTO.phone;
         this.email=contactDTO.email;
     }
-    
+
 }
