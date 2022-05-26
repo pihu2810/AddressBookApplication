@@ -15,19 +15,6 @@ public class Contact {
     private String phone;
     private String email;
 
-    public Contact(int contactId, String firstName, String lastName, String address, String state, String city,
-                   String zip, String phone,String email) {
-        super();
-        this.contactId = contactId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.state = state;
-        this.city = city;
-        this.zip = zip;
-        this.phone = phone;
-        this.email=email;
-    }
 
 
     public Contact(int contactId, ContactDTO contactDTO) {
@@ -36,11 +23,23 @@ public class Contact {
         this.firstName = contactDTO.firstName;
         this.lastName = contactDTO.lastName;
         this.address = contactDTO.address;
-        this.state = contactDTO.state;
         this.city = contactDTO.city;
+        this.state = contactDTO.state;
         this.zip = contactDTO.zip;
         this.phone = contactDTO.phone;
         this.email=contactDTO.email;
     }
+
+    public Contact() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    public String toString() {
+        return "Contact [contactId=" + contactId + ", firstName=" + firstName + ", lastName=" + lastName + ", address="
+                + address + ", state=" + state + ", city=" + city + ", zip=" + zip + ", phone=" + phone + ",email= " + email+ "]";
+    }
+
 
 }
