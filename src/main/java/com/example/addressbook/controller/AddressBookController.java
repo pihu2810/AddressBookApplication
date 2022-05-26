@@ -1,5 +1,6 @@
 package com.example.addressbook.controller;
 
+import com.example.addressbook.model.Contact;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
