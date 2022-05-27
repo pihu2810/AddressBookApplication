@@ -20,7 +20,7 @@ public class AddressBookController {
     @Autowired
     private IAddressBookService addressbookservice;
 
-    @RequestMapping(value = { "", "/", "/get" })
+    @GetMapping(value = { "", "/", "/get" })
     public ResponseEntity<ResponseDTO> getContactData() {
 
         List<Contact> contactData = addressbookservice.getContact();
@@ -48,7 +48,7 @@ public class AddressBookController {
     }
 
     @PutMapping("/update/{contactId}")
-    public ResponseEntity<ResponseDTO> updateContactData(@PathVariable("contactId") int contactId,
+    public ResponseEntity<ResponseDTO> updateContactDataById(@PathVariable("contactId") int contactId,
                                                          @Valid @RequestBody ContactDTO contactDTO) {
         Contact contactData = addressbookservice.updateContact(contactId, contactDTO);
         log.debug("AddressBook Contact After Update " + contactData.toString());
@@ -66,7 +66,21 @@ public class AddressBookController {
         return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK);
     }
 
+    @GetMapping("/sortbystate")
+    public ResponseEntity<ResponseDTO> sortByState() {
+        List<Contact> contactList = null;
+        contactList = addressbookservice.sortByState();
+        ResponseDTO response = new ResponseDTO("Get Call  is Successful Sort By State: ", contactList);
+        return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK);
+    }
 
+    @GetMapping("/sortbycity")
+    public ResponseEntity<ResponseDTO> sortByCity() {
+        List<Contact> contactList = null;
+        contactList = addressbookservice.sortByCity();
+        ResponseDTO response = new ResponseDTO("Get Call  is Successful Sort By City: ", contactList);
+        return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK);
+    }
 
 
 

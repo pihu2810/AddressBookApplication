@@ -5,7 +5,6 @@ import lombok.ToString;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
-@ToString
 public @Data class ContactDTO {
     @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Firstname Invalid ")
     @NotEmpty(message = "first name cannot be null")
